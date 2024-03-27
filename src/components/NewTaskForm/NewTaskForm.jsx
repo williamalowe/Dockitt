@@ -1,11 +1,11 @@
 import { useRef } from 'react';
 import styles from './NewTaskForm.module.css';
 
-const NewTaskForm = () => {
+const NewTaskForm = ({ handleClick }) => {
   const check = useRef();
   
   return (
-    <form className={styles.form}>
+    <div className={styles.form}>
       <h3>New Task</h3>
       <input className={styles.descInput} type="text" placeholder='Task Description...'/>
       <div className={styles.wrapper}>
@@ -48,8 +48,8 @@ const NewTaskForm = () => {
           </div>
         </div>
       </div>
-      <button className={styles.submit}>Add Task</button>
-    </form>
+      <button className={styles.submit} onClick={handleClick}>Add Task</button>
+    </div>
   )
 }
 

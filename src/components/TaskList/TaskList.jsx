@@ -9,12 +9,16 @@ const TaskList = () => {
   const tableElement = useRef();
 
   const toggleDrawer = () => {
-    drawerElement.current.style.left = "0%";
-    drawerElement.current.style.width = "25%";
-    tableElement.current.style.marginLeft = "1rem"
+    if(drawerElement.current.style.left === "-20%") {
+      drawerElement.current.style.left = "0%";
+      drawerElement.current.style.width = "25%";
+      tableElement.current.style.marginLeft = "1rem";
+    } else {
+      drawerElement.current.style.left = "-20%";
+      drawerElement.current.style.width = "0";
+      tableElement.current.style.marginLeft = "0"
+    }
   }
-
-  console.log(tasks)
   return (
     <div className={styles.tasks}>
       <ul className={styles.filter}>
@@ -28,8 +32,10 @@ const TaskList = () => {
       </ul>
       <div className={styles.content}>
         {/* drawer */}
-        <div className={styles.drawer} ref={drawerElement}>
-          <NewTaskForm />
+        <div className={styles.drawer}ref={drawerElement}>
+          <NewTaskForm 
+            handleClick={toggleDrawer}
+          />
         </div>
         {/* tasks */}
         <div className={styles.taskslist} ref={tableElement}>
