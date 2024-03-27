@@ -1,4 +1,5 @@
 .header>h3 {
+  width: fit-content;
   font-size: 1.8rem;
   padding: 0.5rem;
   font-weight: 800;

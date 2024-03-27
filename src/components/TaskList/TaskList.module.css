@@ -1,0 +1,67 @@
+.tasks {
+  overflow: hidden;
+}
+.taskslist {
+  flex: 1;
+  border: 1px solid var(--accent);
+  border-radius: 12px;
+}
+.table {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+  text-align: left;
+}
+.header>tr, .body>tr{
+  padding: 0.5rem;
+  display: flex;
+  border-bottom: 1px solid var(--accent);
+  gap: 1rem;
+}
+.header>tr>th, .body>tr>td {
+  flex: 1;
+  text-transform: capitalize;
+}
+.header>tr>th {
+  color: var(--highlight);
+}
+.header>tr>th:nth-child(2), .body>tr>td:nth-child(2) {
+  flex: 3;
+}
+.body>tr {
+}
+.filter {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+.drawer {
+  position: relative;
+  border: 1px solid var(--accent);
+  border-radius: 12px;
+  top: 0;
+  width: 0;
+  left: -20%;
+  transition: all 0.3s ease;
+}
+.content {
+  margin-top: 1rem;
+  display: flex;
+}
+.filter>li:last-child {
+  margin-left: auto;
+  text-align: right;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border: 2px solid var(--highlight);
+  color: var(--highlight);
+  border-radius: 8px;
+  padding: 0.25rem;
+  transition: all 0.3s ease-in-out;
+}
+.filter>li:last-child:hover {
+  background: var(--highlight);
+  color: var(--background);
+}
