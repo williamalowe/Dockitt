@@ -2,7 +2,7 @@ import styles from './Home.module.css';
 
 const Home = () => {
   return (
-    <main>
+    <main className={styles.main}>
       Hello World
     </main>
   )
