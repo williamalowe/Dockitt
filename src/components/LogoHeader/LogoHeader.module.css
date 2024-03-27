@@ -1,0 +1,18 @@
+.header {
+  position: absolute;
+}
+.header>h3 {
+  font-size: 1.8rem;
+  padding: 0.5rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  background: var(--background);
+  color: var(--highlight);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.header>h3:hover {
+  background: var(--highlight);
+  color: var(--background);
+}
