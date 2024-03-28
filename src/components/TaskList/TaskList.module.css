@@ -75,3 +75,22 @@
   color: black;
   text-transform: lowercase;
 }
+.buttons {
+}
+.buttons>button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+.buttons>button>img {
+  height: 1rem;
+  filter: invert(99%) sepia(0%) saturate(2633%) hue-rotate(218deg) brightness(111%) contrast(96%);
+}
+.buttons>button:hover>img {
+  filter: invert(68%) sepia(18%) saturate(6353%) hue-rotate(92deg) brightness(99%) contrast(73%);
+}
+.buttons>button:nth-child(2):hover>img {
+  filter: invert(69%) sepia(99%) saturate(434%) hue-rotate(358deg) brightness(102%) contrast(104%);}
+.buttons>button:last-child:hover>img {
+  filter: invert(14%) sepia(100%) saturate(7339%) hue-rotate(0deg) brightness(92%) contrast(120%);
+}

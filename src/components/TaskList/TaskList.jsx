@@ -55,9 +55,22 @@ const TaskList = () => {
                   <tr key={task.date}>
                     <td>{task.date}</td>
                     <td><span className={styles.tag}>{task.tag}</span> {task.description}</td>
-                    <td>{task.status}</td>
+                    <td>{task.status}
+                    </td>
                     <td>{task.priority}</td>
-                    <td><button onClick={() => updateStatus(task.date)}>&gt;</button><button onClick={() => rollbackStatus(task.date)}>X</button></td>
+                    <td>
+                    <span className={styles.buttons}>
+                        <button onClick={() => updateStatus(task.date)}>
+                          <img src="./tri-up.svg" alt="update icon" />
+                        </button>
+                        <button onClick={() => rollbackStatus(task.date)}>
+                          <img src="./tri-down.svg" alt="rollback icon" />
+                        </button>
+                        <button onClick={() => rollbackStatus(task.date)}>
+                          <img src="./cross.svg" alt="rollback icon" />
+                        </button>
+                      </span>
+                    </td>
                   </tr>
                 )
               }

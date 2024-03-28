@@ -28,7 +28,6 @@ time, mark, audio, video {
 	vertical-align: baseline;
   font-family: "Inter", sans-serif;
   color: var(--text);
-
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
