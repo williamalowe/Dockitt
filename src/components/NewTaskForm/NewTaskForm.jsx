@@ -23,6 +23,8 @@ const NewTaskForm = ({ handleClose }) => {
       addTask(newDesc, newTag, newStat, newPrio);
       setNewDesc('');
       setNewTag('')
+      setNewStat('backlog')
+      setNewPrio('low')
       backlogCheck.current.checked = true;
       lowCheck.current.checked = true;
       errElement.current.style.display = 'none';
