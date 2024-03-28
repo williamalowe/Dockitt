@@ -55,7 +55,7 @@
 .error {
   display: none;
   margin-top: 0.5rem;
-  color: red;
+  color: #ff0000;
 }
 .buttons {
   display: flex;

@@ -4,7 +4,7 @@ import styles from './TaskList.module.css'
 import NewTaskForm from '../NewTaskForm/NewTaskForm';
 
 const TaskList = () => {
-  const { tasks } = useContext(TaskContext);
+  const { tasks, updateStatus, rollbackStatus } = useContext(TaskContext);
   const drawerElement = useRef();
   const tableElement = useRef();
 
@@ -46,7 +46,7 @@ const TaskList = () => {
                 <th>Description</th>
                 <th>Status</th>
                 <th>Priority</th>
-                {/* <th></th> */}
+                <th></th>
               </tr>
             </thead>
             <tbody className={styles.body}>
@@ -55,9 +55,22 @@ const TaskList = () => {
                   <tr key={task.date}>
                     <td>{task.date}</td>
                     <td><span className={styles.tag}>{task.tag}</span> {task.description}</td>
-                    <td>{task.status}</td>
+                    <td>{task.status}
+                    </td>
                     <td>{task.priority}</td>
-                    {/* <td><button>&gt;</button><button>X</button></td> */}
+                    <td>
+                    <span className={styles.buttons}>
+                        <button onClick={() => updateStatus(task.date)}>
+                          <img src="./tri-up.svg" alt="update icon" />
+                        </button>
+                        <button onClick={() => rollbackStatus(task.date)}>
+                          <img src="./tri-down.svg" alt="rollback icon" />
+                        </button>
+                        <button onClick={() => rollbackStatus(task.date)}>
+                          <img src="./cross.svg" alt="rollback icon" />
+                        </button>
+                      </span>
+                    </td>
                   </tr>
                 )
               }
