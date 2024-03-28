@@ -50,6 +50,8 @@ const Home = () => {
 
       if (target[0].status === 'backlog') {
         newStat = 'in progress';
+      } else if (target[0].status === 'cancelled') {
+        newStat = 'backlog';
       } else if (target[0].status === 'in progress') {
         newStat = 'under review';
       } else if (target[0].status === 'under review') {
