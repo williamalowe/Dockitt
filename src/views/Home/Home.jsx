@@ -5,7 +5,8 @@ import { createContext, useState } from 'react';
 
 export const TaskContext = createContext({
   tasks: [],
-  addTask: () => {}
+  addTask: () => {},
+  updateTask: () => {}
 });
 
 const Home = () => {
@@ -25,6 +26,7 @@ const Home = () => {
       priority: 'medium'
     }
   ]);
+  // Add New Task
   const addTask = (desc, tag, stat, prio) => {
     const newTask = {
       date: Date.now(),
@@ -35,9 +37,38 @@ const Home = () => {
     };
   setTasks(tasks => [...tasks, newTask]);
   };
+  // Update Task Status
+  const updateStatus = (id) => {
+    let newList = tasks.filter((task) => task.date !== id);
+    let target = tasks.filter((task) => task.date === id);
 
+    if (target[0].status === 'completed') {
+      setTasks([...newList])
+    } else {
+      let newStat = '';
+
+      if (target[0].status === 'backlog') {
+        newStat = 'in progress';
+      } else if (target[0].status === 'in progress') {
+        newStat = 'under review';
+      } else if (target[0].status === 'under review') {
+        newStat = 'completed';
+      }
+
+      let updatedTask = {
+        date: target[0].date,
+        description: target[0].description,
+        tag: target[0].tag,
+        status: newStat,
+        priority: target[0].priority
+      }
+
+      console.log(updatedTask)
+      setTasks([...newList, updatedTask])
+    }
+  }
   return (
-    <TaskContext.Provider value={{ tasks, addTask}}>
+    <TaskContext.Provider value={{ tasks, addTask, updateStatus }}>
       <main className={styles.main}>
         <LogoHeader />
       <section className={styles.content}>
