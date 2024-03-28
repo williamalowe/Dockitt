@@ -46,6 +46,7 @@ const TaskList = () => {
                 <th>Description</th>
                 <th>Status</th>
                 <th>Priority</th>
+                {/* <th></th> */}
               </tr>
             </thead>
             <tbody className={styles.body}>
@@ -56,6 +57,7 @@ const TaskList = () => {
                     <td><span className={styles.tag}>{task.tag}</span> {task.description}</td>
                     <td>{task.status}</td>
                     <td>{task.priority}</td>
+                    {/* <td><button>&gt;</button><button>X</button></td> */}
                   </tr>
                 )
               }

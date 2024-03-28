@@ -16,6 +16,13 @@ const Home = () => {
       tag: 'fix',
       status: 'backlog',
       priority: 'high'
+    },
+    {
+      date: '1711593253002',
+      description: 'Update changelog documentation',
+      tag: 'Docs',
+      status: 'in progress',
+      priority: 'medium'
     }
   ]);
   const addTask = (desc, tag, stat, prio) => {
