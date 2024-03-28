@@ -4,7 +4,7 @@ import styles from './TaskList.module.css'
 import NewTaskForm from '../NewTaskForm/NewTaskForm';
 
 const TaskList = () => {
-  const { tasks, updateStatus } = useContext(TaskContext);
+  const { tasks, updateStatus, rollbackStatus } = useContext(TaskContext);
   const drawerElement = useRef();
   const tableElement = useRef();
 
@@ -57,7 +57,7 @@ const TaskList = () => {
                     <td><span className={styles.tag}>{task.tag}</span> {task.description}</td>
                     <td>{task.status}</td>
                     <td>{task.priority}</td>
-                    <td><button onClick={() => updateStatus(task.date)}>&gt;</button><button>X</button></td>
+                    <td><button onClick={() => updateStatus(task.date)}>&gt;</button><button onClick={() => rollbackStatus(task.date)}>X</button></td>
                   </tr>
                 )
               }

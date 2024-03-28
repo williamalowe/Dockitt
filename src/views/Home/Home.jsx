@@ -6,7 +6,8 @@ import { createContext, useState } from 'react';
 export const TaskContext = createContext({
   tasks: [],
   addTask: () => {},
-  updateTask: () => {}
+  updateStatus: () => {},
+  rollbackStatus: () => {}
 });
 
 const Home = () => {
@@ -67,8 +68,39 @@ const Home = () => {
       setTasks([...newList, updatedTask])
     }
   }
+  const rollbackStatus = (id) => {
+    let newList = tasks.filter((task) => task.date !== id);
+    let target = tasks.filter((task) => task.date === id);
+
+    if (target[0].status === 'cancelled') {
+      setTasks([...newList])
+    } else {
+      let newStat = '';
+
+      if (target[0].status === 'completed') {
+        newStat = 'under review';
+      } else if (target[0].status === 'under review') {
+        newStat = 'in progress';
+      } else if (target[0].status === 'in progress') {
+        newStat = 'backlog';
+      } else if (target[0].status === 'backlog') {
+        newStat = 'cancelled';
+      }
+
+      let updatedTask = {
+        date: target[0].date,
+        description: target[0].description,
+        tag: target[0].tag,
+        status: newStat,
+        priority: target[0].priority
+      }
+
+      console.log(updatedTask)
+      setTasks([...newList, updatedTask])
+    }
+  }
   return (
-    <TaskContext.Provider value={{ tasks, addTask, updateStatus }}>
+    <TaskContext.Provider value={{ tasks, addTask, updateStatus, rollbackStatus }}>
       <main className={styles.main}>
         <LogoHeader />
       <section className={styles.content}>
