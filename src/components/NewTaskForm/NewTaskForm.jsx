@@ -3,58 +3,56 @@ import styles from './NewTaskForm.module.css';
 import { TaskContext } from '../../views/Home/Home';
 
 const NewTaskForm = ({ handleClose }) => {
-const [newDesc, setNewDesc] = useState('')
-const [newTag, setNewTag] = useState ('')
-const [newStat, setNewStat] = useState('')  
-const [newPrio, setNewPrio] = useState('')
+  const { addTask } = useContext(TaskContext);
+  const [newDesc, setNewDesc] = useState('')
+  const [newTag, setNewTag] = useState ('')
+  const [newStat, setNewStat] = useState('backlog')  
+  const [newPrio, setNewPrio] = useState('low')
+  const backlogCheck = useRef();
+  const inProgressCheck = useRef();
+  const underReviewCheck = useRef();
+  const completedCheck = useRef();
+  const lowCheck = useRef();
+  const mediumCheck = useRef();
+  const highCheck = useRef();
+  const urgentCheck = useRef();
+  const errElement = useRef();
 
-const backlogCheck = useRef();
-const inProgressCheck = useRef();
-const underReviewCheck = useRef();
-const completedCheck = useRef();
-const lowCheck = useRef();
-const mediumCheck = useRef();
-const highCheck = useRef();
-const urgentCheck = useRef();
-const errElement = useRef();
-
-const { addTask } = useContext(TaskContext);
-
-const handleSubmit = () => {
-  if (newDesc !== ''){
-    addTask(newDesc, newTag, newStat, newPrio);
-    setNewDesc('');
-    setNewTag('')
-    backlogCheck.current.checked = true;
-    lowCheck.current.checked = true;
-    errElement.current.style.display = 'none';
-  } else {
-    errElement.current.style.display = 'block';
+  const handleSubmit = () => {
+    if (newDesc !== ''){
+      addTask(newDesc, newTag, newStat, newPrio);
+      setNewDesc('');
+      setNewTag('')
+      backlogCheck.current.checked = true;
+      lowCheck.current.checked = true;
+      errElement.current.style.display = 'none';
+    } else {
+      errElement.current.style.display = 'block';
+    }
   }
-}
 
-const checkHandler = () => {
-  // check status - default:backlog
-  if (inProgressCheck.current.checked) {
-    setNewStat(inProgressCheck.current.value)
-  } else if (underReviewCheck.current.checked) {
-    setNewStat(underReviewCheck.current.value)
-  } else if (completedCheck.current.checked) {
-    setNewStat(completedCheck.current.value)
-  } else {
-    setNewStat(backlogCheck.current.value)
+  const checkHandler = () => {
+    // check status - default:backlog
+    if (inProgressCheck.current.checked) {
+      setNewStat(inProgressCheck.current.value)
+    } else if (underReviewCheck.current.checked) {
+      setNewStat(underReviewCheck.current.value)
+    } else if (completedCheck.current.checked) {
+      setNewStat(completedCheck.current.value)
+    } else {
+      setNewStat(backlogCheck.current.value)
+    }
+    // check priority - default:low
+    if (mediumCheck.current.checked) {
+      setNewPrio(mediumCheck.current.value)
+    } else if (highCheck.current.checked) {
+      setNewPrio(highCheck.current.value)
+    } else if (urgentCheck.current.checked) {
+      setNewPrio(urgentCheck.current.value)
+    } else {
+      setNewPrio(lowCheck.current.value)
+    }
   }
-  // check priority - default:low
-  if (mediumCheck.current.checked) {
-    setNewPrio(mediumCheck.current.value)
-  } else if (highCheck.current.checked) {
-    setNewPrio(highCheck.current.value)
-  } else if (urgentCheck.current.checked) {
-    setNewPrio(urgentCheck.current.value)
-  } else {
-    setNewPrio(lowCheck.current.value)
-  }
-}
 
   return (
     <div className={styles.form}>

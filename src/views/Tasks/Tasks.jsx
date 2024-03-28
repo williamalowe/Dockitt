@@ -13,7 +13,6 @@ const Tasks = () => {
     addTask(newDesc, newPrio, newStat);
   };
   
-  console.log(tasks);
   return (
     <section className={styles.main}>
       <div className={styles.header}>
