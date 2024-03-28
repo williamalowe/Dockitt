@@ -27,6 +27,8 @@
 }
 .header>tr>th:nth-child(2), .body>tr>td:nth-child(2) {
   flex: 3;
+  display: flex;
+  gap: 0.25rem;
 }
 .body>tr {
 }
@@ -64,4 +66,12 @@
 .filter>li:last-child:hover {
   background: var(--highlight);
   color: var(--background);
+}
+.tag {
+  background: lightgray;
+  height: fit-content;
+  padding: 0 0.25rem;
+  border-radius: 20px;
+  color: black;
+  text-transform: lowercase;
 }

@@ -11,16 +11,18 @@ export const TaskContext = createContext({
 const Home = () => {
   const [tasks, setTasks] = useState([
     {
-      date: '000000000001',
+      date: '1711591972253',
       description: 'Some of the project dependencies are outdated, need to update them to the latest versions',
+      tag: 'fix',
       status: 'backlog',
       priority: 'high'
     }
   ]);
-  const addTask = (desc, stat, prio) => {
+  const addTask = (desc, tag, stat, prio) => {
     const newTask = {
       date: Date.now(),
       description: desc,
+      tag: tag,
       status: stat,
       priority: prio
     };

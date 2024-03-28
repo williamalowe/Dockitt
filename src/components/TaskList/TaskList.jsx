@@ -4,7 +4,7 @@ import styles from './TaskList.module.css'
 import NewTaskForm from '../NewTaskForm/NewTaskForm';
 
 const TaskList = () => {
-  const { tasks, addTask } = useContext(TaskContext);
+  const { tasks } = useContext(TaskContext);
   const drawerElement = useRef();
   const tableElement = useRef();
 
@@ -34,7 +34,7 @@ const TaskList = () => {
         {/* drawer */}
         <div className={styles.drawer}ref={drawerElement}>
           <NewTaskForm 
-            handleClick={toggleDrawer}
+            handleClose={toggleDrawer}
           />
         </div>
         {/* tasks */}
@@ -53,7 +53,7 @@ const TaskList = () => {
                 tasks.map((task) => 
                   <tr key={task.date}>
                     <td>{task.date}</td>
-                    <td>{task.description}</td>
+                    <td><span className={styles.tag}>{task.tag}</span> {task.description}</td>
                     <td>{task.status}</td>
                     <td>{task.priority}</td>
                   </tr>
