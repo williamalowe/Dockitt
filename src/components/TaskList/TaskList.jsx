@@ -46,7 +46,7 @@ const TaskList = () => {
                 <th>Description</th>
                 <th>Status</th>
                 <th>Priority</th>
-                <th></th>
+                <th>Update</th>
               </tr>
             </thead>
             <tbody className={styles.body}>
