@@ -4,7 +4,7 @@ import styles from './TaskList.module.css'
 import NewTaskForm from '../NewTaskForm/NewTaskForm';
 
 const TaskList = () => {
-  const { tasks, updateStatus, rollbackStatus } = useContext(TaskContext);
+  const { tasks, updateStatus, rollbackStatus, cancelTask } = useContext(TaskContext);
   const drawerElement = useRef();
   const tableElement = useRef();
 
@@ -66,7 +66,7 @@ const TaskList = () => {
                         <button onClick={() => rollbackStatus(task.date)}>
                           <img src="./tri-down.svg" alt="rollback icon" />
                         </button>
-                        <button onClick={() => rollbackStatus(task.date)}>
+                        <button onClick={() => cancelTask(task.date)}>
                           <img src="./cross.svg" alt="rollback icon" />
                         </button>
                       </span>
