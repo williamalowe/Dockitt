@@ -70,7 +70,22 @@ const TaskList = () => {
               </tr>
             </thead>
             <tbody className={styles.body}>
-              {
+              { 
+                tasks.length === 0 ?
+                <tr className={styles.notice}>
+                  <td>
+                    <div>No pending tasks!</div>
+                    <button className={styles.addButton} onClick={toggleDrawer}>Add Task</button>
+                  </td>
+                </tr>
+                :
+                filteredList.length === 0 ? 
+                <tr className={styles.notice}>
+                  <td>
+                    No tasks in this state.
+                  </td>
+                </tr>
+                :
                 filteredList.map((task) => 
                   <tr key={task.date}>
                     <td>{task.date}</td>

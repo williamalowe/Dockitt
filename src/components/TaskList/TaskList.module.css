@@ -94,3 +94,24 @@
 .buttons>button:last-child:hover>img {
   filter: invert(14%) sepia(100%) saturate(7339%) hue-rotate(0deg) brightness(92%) contrast(120%);
 }
+.notice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.addButton {
+  margin-top: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border: 2px solid var(--highlight);
+  background: transparent;
+  color: var(--highlight);
+  border-radius: 8px;
+  padding: 0.25rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.addButton:hover {
+  background: var(--highlight);
+  color: var(--background);
+}
