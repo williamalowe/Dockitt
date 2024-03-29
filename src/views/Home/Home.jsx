@@ -7,7 +7,8 @@ export const TaskContext = createContext({
   tasks: [],
   addTask: () => {},
   updateStatus: () => {},
-  rollbackStatus: () => {}
+  rollbackStatus: () => {},
+  cancelTask: () => {}
 });
 
 const Home = () => {
@@ -101,8 +102,24 @@ const Home = () => {
       setTasks([...newList, updatedTask])
     }
   }
+
+  const cancelTask = (id) => {
+    let newList = tasks.filter((task) => task.date !== id);
+    let target = tasks.filter((task) => task.date === id);
+
+    let updatedTask = {
+      date: target[0].date,
+      description: target[0].description,
+      tag: target[0].tag,
+      status: 'cancelled',
+      priority: target[0].priority
+    };
+
+    setTasks([...newList, updatedTask]);
+  }
+
   return (
-    <TaskContext.Provider value={{ tasks, addTask, updateStatus, rollbackStatus }}>
+    <TaskContext.Provider value={{ tasks, addTask, updateStatus, rollbackStatus, cancelTask }}>
       <main className={styles.main}>
         <LogoHeader />
       <section className={styles.content}>
