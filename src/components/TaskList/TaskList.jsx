@@ -1,4 +1,4 @@
-import { useContext, useRef } from 'react'
+import { useState, useEffect, useContext, useRef } from 'react'
 import { TaskContext } from '../../views/Home/Home';
 import styles from './TaskList.module.css'
 import NewTaskForm from '../NewTaskForm/NewTaskForm';
@@ -7,6 +7,26 @@ const TaskList = () => {
   const { tasks, updateStatus, rollbackStatus, cancelTask } = useContext(TaskContext);
   const drawerElement = useRef();
   const tableElement = useRef();
+
+  const [filter, setFilter] = useState(0)
+  const [filteredList, setFilteredList] = useState([...tasks])
+
+  useEffect(() => {
+    if (filter === 0) {
+      setFilteredList([...tasks])
+    } else if (filter === 1) {
+      setFilteredList([...tasks.filter((task) => task.status === 'backlog')])
+    } else if (filter === 2) {
+      setFilteredList([...tasks.filter((task) => task.status === 'in progress')])
+    } else if (filter === 3) {
+      setFilteredList([...tasks.filter((task) => task.status === 'under review')])
+    } else if (filter === 4) {
+      setFilteredList([...tasks.filter((task) => task.status === 'completed')])
+    } else if (filter === 5) {
+      setFilteredList([...tasks.filter((task) => task.status === 'cancelled')])
+    }
+  }, [filter, tasks])
+// console.log(tasks.filter((task) => task.status === 'backlog'))
 
   const toggleDrawer = () => {
     if(drawerElement.current.style.left === "-20%") {
@@ -22,12 +42,12 @@ const TaskList = () => {
   return (
     <div className={styles.tasks}>
       <ul className={styles.filter}>
-        <li>All Tasks</li>
-        <li>Backlog</li>
-        <li>In Progress</li>
-        <li>Under Review</li>
-        <li>Completed</li>
-        <li>Cancelled</li>
+        <li onClick={() => setFilter(0)}>All Tasks</li>
+        <li onClick={() => setFilter(1)}>Backlog</li>
+        <li onClick={() => setFilter(2)}>In Progress</li>
+        <li onClick={() => setFilter(3)}>Under Review</li>
+        <li onClick={() => setFilter(4)}>Completed</li>
+        <li onClick={() => setFilter(5)}>Cancelled</li>
         <li onClick={toggleDrawer}>New Task</li>
       </ul>
       <div className={styles.content}>
@@ -51,7 +71,7 @@ const TaskList = () => {
             </thead>
             <tbody className={styles.body}>
               {
-                tasks.map((task) => 
+                filteredList.map((task) => 
                   <tr key={task.date}>
                     <td>{task.date}</td>
                     <td><span className={styles.tag}>{task.tag}</span> {task.description}</td>
