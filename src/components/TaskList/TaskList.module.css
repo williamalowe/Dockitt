@@ -30,8 +30,6 @@
   display: flex;
   gap: 0.25rem;
 }
-.body>tr {
-}
 .filter {
   display: flex;
   align-items: center;
@@ -62,6 +60,12 @@
   border-radius: 8px;
   padding: 0.25rem;
   transition: all 0.3s ease-in-out;
+}
+.filter>li {
+  transition: color 0.3s ease-in-out;
+}
+.filter>li:hover {
+  color: var(--highlight);
 }
 .filter>li:last-child:hover {
   background: var(--highlight);
