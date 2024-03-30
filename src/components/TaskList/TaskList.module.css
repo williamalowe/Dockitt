@@ -119,3 +119,7 @@
   background: var(--highlight);
   color: var(--background);
 }
+.body>tr:hover {
+  background: var(--accent);
+  cursor: pointer;
+}
