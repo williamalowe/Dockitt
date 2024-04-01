@@ -1,20 +1,24 @@
 .main {
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
   max-width: calc(100vw - 4rem);
   min-height: calc(100vh - 2rem);
   max-height: calc(100vh - 2rem);
   background: var(--background);
   padding: 1rem 2rem;
+  overflow: hidden;
 }
 .content {
-  flex: 1;
+  height: 85vh;
   margin: 2rem;
   border: 1px solid var(--accent);
   border-radius: 12px;
-  animation: fadein 1s linear
+  overflow: scroll;
+  animation: fadein 1s linear;
 }
-
+.content::-webkit-scrollbar {
+  display: none;
+}
 @keyframes fadein {
   from {
     opacity: 0;

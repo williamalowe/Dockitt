@@ -8,10 +8,10 @@ const Tasks = () => {
       <div className={styles.header}>
         <h3>Welcome back.</h3>
         <h5>Here are your current tasks.</h5>
+      </div>
         <div className={styles.list}>
           <TaskList />
         </div>
-      </div>
     </section>
   )
 }
