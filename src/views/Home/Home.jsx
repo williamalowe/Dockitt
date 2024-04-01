@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import LogoHeader from '../../components/LogoHeader/LogoHeader';
 import styles from './Home.module.css';
-import { createContext, useState } from 'react';
+import { createContext, useState, useEffect } from 'react';
 
 export const TaskContext = createContext({
   tasks: [],
@@ -12,22 +12,14 @@ export const TaskContext = createContext({
 });
 
 const Home = () => {
-  const [tasks, setTasks] = useState([
-    {
-      date: '1711591972253',
-      description: 'Some of the project dependencies are outdated, need to update them to the latest versions',
-      tag: 'fix',
-      status: 'backlog',
-      priority: 'high'
-    },
-    {
-      date: '1711593253002',
-      description: 'Update changelog documentation',
-      tag: 'Docs',
-      status: 'in progress',
-      priority: 'medium'
-    }
-  ]);
+  const [tasks, setTasks] = useState(() => {
+    return JSON.parse(localStorage.getItem('tasks')) || []
+  });
+
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  }, [tasks]);
+
   // Add New Task
   const addTask = (desc, tag, stat, prio) => {
     const newTask = {
