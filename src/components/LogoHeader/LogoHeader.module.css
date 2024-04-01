@@ -11,8 +11,6 @@
   transition: all 0.3s ease-in-out;
 }
 .header>h3:hover {
-  background: var(--highlight);
-  color: var(--background);
   background: var(--background);
   color: var(--highlight);
 }
