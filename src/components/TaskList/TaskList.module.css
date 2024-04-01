@@ -80,6 +80,7 @@
   text-transform: lowercase;
 }
 .buttons {
+  position: relative;
 }
 .buttons>button {
   border: none;
@@ -122,4 +123,28 @@
 .body>tr:hover {
   background: var(--accent);
   cursor: pointer;
+}
+.buttons>button:nth-child(1):hover>.updateDescription {
+  opacity: 1;
+  left: 0;
+  color: var(--highlight);
+}
+.buttons>button:nth-child(2):hover>.updateDescription {
+  opacity: 1;
+  left: 2rem;
+  color: yellow;
+}
+.buttons>button:nth-child(3):hover>.updateDescription {
+  opacity: 1;
+  left: 4rem;
+  color: red;
+}
+.updateDescription {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  top: -150%;
+  left: -2rem;
+  z-index: 100;
+  transition: all 0.3s ease-in-out;
 }
