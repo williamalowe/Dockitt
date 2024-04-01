@@ -8,7 +8,7 @@ const Error = () => {
     <main className={styles.error}>
       <LogoHeader />
       <section className={styles.content}>
-        <h3>Oops! Something has gone wrong!</h3>
+        <h3>Oops! Something has gone wrong.</h3>
         <h5>
           Click
           <NavLink to='/tasks'> here </NavLink>

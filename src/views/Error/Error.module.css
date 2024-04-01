@@ -29,3 +29,10 @@
 .content>h5>a:hover {
   text-transform: uppercase;
 }
+
+@media screen and (max-width: 768px) {
+  .content>h3 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+}

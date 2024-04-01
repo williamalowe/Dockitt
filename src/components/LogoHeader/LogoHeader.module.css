@@ -4,8 +4,8 @@
   padding: 0.5rem;
   font-weight: 800;
   letter-spacing: 1px;
-  background: var(--background);
-  color: var(--highlight);
+  background: var(--highlight);
+  color: var(--background);
   border-radius: 12px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
@@ -13,4 +13,15 @@
 .header>h3:hover {
   background: var(--highlight);
   color: var(--background);
+  background: var(--background);
+  color: var(--highlight);
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    text-align: center;
+  }
+  .header>h3 {
+    width: 100%
+  }
 }

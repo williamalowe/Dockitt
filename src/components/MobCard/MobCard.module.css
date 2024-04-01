@@ -1,0 +1,40 @@
+.card {
+  padding: 0.5rem;
+  border: 1px solid var(--accent);
+  border-radius: 12px;
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-transform: capitalize;
+}
+.title {
+  flex: 1;
+  color: var(--highlight);
+}
+.desc {
+  flex: 3;
+}
+.stats {
+  font-weight: 600;
+}
+.buttons {
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+}
+.buttons>button {
+  background: none;
+  border: none;
+}
+.buttons>button>img {
+  height: 1rem;
+}
+.buttons>button:nth-child(1)>img {
+  filter: invert(68%) sepia(18%) saturate(6353%) hue-rotate(92deg) brightness(99%) contrast(73%);
+}
+.buttons>button:nth-child(2)>img {
+  filter: invert(69%) sepia(99%) saturate(434%) hue-rotate(358deg) brightness(102%) contrast(104%);
+}.buttons>button:nth-child(3)>img {
+  filter: invert(14%) sepia(100%) saturate(7339%) hue-rotate(0deg) brightness(92%) contrast(120%);
+}
