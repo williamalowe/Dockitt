@@ -67,7 +67,7 @@ const NewTaskForm = ({ handleClose }) => {
         required
       />
       <br></br>
-      <label>Tag:</label>
+      <label>Tag (optional):</label>
       <input 
         className={styles.tagInput} 
         type="text" value={newTag} 
