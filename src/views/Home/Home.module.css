@@ -1,8 +1,9 @@
 .main {
   display: flex;
   flex-direction: column;
-  width: calc(100vw - 4rem);
-  height: calc(100vh - 2rem);
+  max-width: calc(100vw - 4rem);
+  min-height: calc(100vh - 2rem);
+  max-height: calc(100vh - 2rem);
   background: var(--background);
   padding: 1rem 2rem;
 }
@@ -11,4 +12,12 @@
   margin: 2rem;
   border: 1px solid var(--accent);
   border-radius: 12px;
+  animation: fadein 1s linear
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: translateX(-2rem);
+  }
 }
