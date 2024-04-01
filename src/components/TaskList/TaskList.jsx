@@ -97,12 +97,15 @@ const TaskList = () => {
                     <span className={styles.buttons}>
                         <button onClick={() => updateStatus(task.date)}>
                           <img src="./tri-up.svg" alt="update icon" />
+                          <div className={styles.updateDescription}>Push status</div>
                         </button>
                         <button onClick={() => rollbackStatus(task.date)}>
                           <img src="./tri-down.svg" alt="rollback icon" />
+                          <div className={styles.updateDescription}>Drop status</div>
                         </button>
                         <button onClick={() => cancelTask(task.date)}>
                           <img src="./cross.svg" alt="rollback icon" />
+                          <div className={styles.updateDescription}>Cancel Task</div>
                         </button>
                       </span>
                     </td>
