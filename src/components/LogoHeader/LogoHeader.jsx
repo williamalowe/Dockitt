@@ -7,6 +7,11 @@ const LogoHeader = () => {
       <h3>
         <NavLink>dockitt.</NavLink>
       </h3>
+      <div className={styles.links}>
+        <NavLink to='/'>Home</NavLink>
+        <NavLink to='/tasks'>Tasks</NavLink>
+        <NavLink to='/dashboard'>Dashboard</NavLink>
+      </div>
     </div>
   )
 }
