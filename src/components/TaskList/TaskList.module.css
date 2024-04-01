@@ -152,6 +152,11 @@
 .mobView {
   display: none;
 }
+.mobList {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.5rem;
+}
 
 @media screen and (max-width: 768px) {
   .filter {
