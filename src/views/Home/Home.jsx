@@ -58,8 +58,6 @@ const Home = () => {
         status: newStat,
         priority: target[0].priority
       }
-
-      console.log(updatedTask)
       setTasks([...newList, updatedTask])
     }
   }
@@ -99,15 +97,18 @@ const Home = () => {
     let newList = tasks.filter((task) => task.date !== id);
     let target = tasks.filter((task) => task.date === id);
 
-    let updatedTask = {
-      date: target[0].date,
-      description: target[0].description,
-      tag: target[0].tag,
-      status: 'cancelled',
-      priority: target[0].priority
-    };
-
-    setTasks([...newList, updatedTask]);
+    if (target[0].status !== 'cancelled') {
+      let updatedTask = {
+        date: target[0].date,
+        description: target[0].description,
+        tag: target[0].tag,
+        status: 'cancelled',
+        priority: target[0].priority
+      };
+      setTasks([...newList, updatedTask]);
+    } else if (target[0].status === 'cancelled') {
+      setTasks([...newList])
+    }
   }
 
   return (
