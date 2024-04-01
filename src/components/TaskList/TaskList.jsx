@@ -2,6 +2,7 @@ import { useState, useEffect, useContext, useRef } from 'react'
 import { TaskContext } from '../../views/Home/Home';
 import styles from './TaskList.module.css'
 import NewTaskForm from '../NewTaskForm/NewTaskForm';
+import MobCard from '../MobCard/MobCard';
 
 const TaskList = () => {
   const { tasks, updateStatus, rollbackStatus, cancelTask } = useContext(TaskContext);
@@ -26,7 +27,6 @@ const TaskList = () => {
       setFilteredList([...tasks.filter((task) => task.status === 'cancelled')])
     }
   }, [filter, tasks])
-// console.log(tasks.filter((task) => task.status === 'backlog'))
 
   const toggleDrawer = () => {
     if(drawerElement.current.style.left === "-20%") {
@@ -115,6 +115,25 @@ const TaskList = () => {
             </tbody>
           </table>
         </div>
+        {/* mobile view */}
+        <div className={styles.mobView}>
+          <h3>Tasks</h3>
+          <div className={styles.mobList}>
+            {
+              filteredList.map((task) => 
+                <MobCard 
+                  key={task.date}
+                  task={task.date}
+                  desc={task.description}
+                  prio={task.priority}
+                  stat={task.status}
+                />
+              )
+            }
+
+          </div>
+        </div>
+
       </div>
       
     </div>
