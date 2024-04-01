@@ -62,12 +62,13 @@
   transition: all 0.3s ease-in-out;
 }
 .filter>li {
-  transition: color 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
 }
 .filter>li:hover {
-  color: var(--highlight);
+  opacity: 0.6;
 }
 .filter>li:last-child:hover {
+  opacity: 1;
   background: var(--highlight);
   color: var(--background);
 }

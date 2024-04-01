@@ -8,23 +8,38 @@ const TaskList = () => {
   const { tasks, updateStatus, rollbackStatus, cancelTask } = useContext(TaskContext);
   const drawerElement = useRef();
   const tableElement = useRef();
+  const filterAllElement = useRef();
+  const filterBacklogElement = useRef();
+  const filterInProgressElement = useRef();
+  const filterUnderReviewElement = useRef();
+  const filterCompletedElement = useRef();
+  const filterCancelledElement = useRef();
 
   const [filter, setFilter] = useState(0)
   const [filteredList, setFilteredList] = useState([...tasks])
 
   useEffect(() => {
+    drawerElement.current.style.left = "-20%"
+  }, [])
+  useEffect(() => {
     if (filter === 0) {
-      setFilteredList([...tasks])
+      setFilteredList([...tasks]);
+      setFilterColor(filterAllElement);
     } else if (filter === 1) {
-      setFilteredList([...tasks.filter((task) => task.status === 'backlog')])
+      setFilteredList([...tasks.filter((task) => task.status === 'backlog')]);
+      setFilterColor(filterBacklogElement);
     } else if (filter === 2) {
-      setFilteredList([...tasks.filter((task) => task.status === 'in progress')])
+      setFilteredList([...tasks.filter((task) => task.status === 'in progress')]);
+      setFilterColor(filterInProgressElement);
     } else if (filter === 3) {
-      setFilteredList([...tasks.filter((task) => task.status === 'under review')])
+      setFilteredList([...tasks.filter((task) => task.status === 'under review')]);
+      setFilterColor(filterUnderReviewElement);
     } else if (filter === 4) {
-      setFilteredList([...tasks.filter((task) => task.status === 'completed')])
+      setFilteredList([...tasks.filter((task) => task.status === 'completed')]);
+      setFilterColor(filterCompletedElement);
     } else if (filter === 5) {
-      setFilteredList([...tasks.filter((task) => task.status === 'cancelled')])
+      setFilteredList([...tasks.filter((task) => task.status === 'cancelled')]);
+      setFilterColor(filterCancelledElement);
     }
   }, [filter, tasks])
 
@@ -39,15 +54,26 @@ const TaskList = () => {
       tableElement.current.style.marginLeft = "0"
     }
   }
+  const setFilterColor = (element) => {
+    filterAllElement.current.style.color = 'var(--text)';
+    filterBacklogElement.current.style.color = 'var(--text)';
+    filterInProgressElement.current.style.color = 'var(--text)';
+    filterUnderReviewElement.current.style.color = 'var(--text)';
+    filterCompletedElement.current.style.color = 'var(--text)';
+    filterCancelledElement.current.style.color = 'var(--text)';
+    // apply filter color
+    element.current.style.color = 'var(--highlight)';
+  }
+
   return (
     <div className={styles.tasks}>
       <ul className={styles.filter}>
-        <li onClick={() => setFilter(0)}>All Tasks</li>
-        <li onClick={() => setFilter(1)}>Backlog</li>
-        <li onClick={() => setFilter(2)}>In Progress</li>
-        <li onClick={() => setFilter(3)}>Under Review</li>
-        <li onClick={() => setFilter(4)}>Completed</li>
-        <li onClick={() => setFilter(5)}>Cancelled</li>
+        <li onClick={() => setFilter(0)} ref={filterAllElement}>All Tasks</li>
+        <li onClick={() => setFilter(1)} ref={filterBacklogElement}>Backlog</li>
+        <li onClick={() => setFilter(2)} ref={filterInProgressElement}>In Progress</li>
+        <li onClick={() => setFilter(3)} ref={filterUnderReviewElement}>Under Review</li>
+        <li onClick={() => setFilter(4)} ref={filterCompletedElement}>Completed</li>
+        <li onClick={() => setFilter(5)} ref={filterCancelledElement}>Cancelled</li>
         <li onClick={toggleDrawer}>New Task</li>
       </ul>
       <div className={styles.content}>
