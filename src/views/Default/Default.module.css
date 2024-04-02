@@ -12,9 +12,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-.logo {
-
+  gap: 1rem;
 }
 .logo>h5 {
   top: 10%;
@@ -66,4 +64,25 @@
 }
 .links>a:hover>img {
   transform: scale(1.4);
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    flex-direction: column;
+  }
+  .logo>h5 {
+    font-size: 1.2rem;
+  }
+  .logo>h3 {
+    font-size: 3.2rem;
+  }
+  .left>p {
+    font-size: 1rem;
+  }
+  .right>p {
+    font-size: 1rem;
+  }
+  .links>a>img {
+    height: 2rem;
+  }
 }
