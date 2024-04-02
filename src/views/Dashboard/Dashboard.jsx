@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { TaskContext } from '../Home/Home';
 import styles from './Dashboard.module.css';
 import StatCard from '../../components/StatCard/StatCard';
+import BarChart from '../../components/BarChart/BarChart';
 
 const Dashboard = () => {
   const { tasks } = useContext(TaskContext);
@@ -40,7 +41,16 @@ const Dashboard = () => {
         </div>
       </div>
       <div className={styles.lower}>
-        <div className={styles.lowerLeft}></div>
+        <div className={styles.lowerLeft}>
+          <div className={styles.graphContainer}>
+            <BarChart 
+              tasks={activeTasks}
+            />
+          </div>
+          <div className={styles.dotContainer}>
+
+          </div>
+        </div>
         <div className={styles.lowerRight}></div>
       </div>
     </section>

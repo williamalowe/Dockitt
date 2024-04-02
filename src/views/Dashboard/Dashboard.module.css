@@ -8,7 +8,25 @@
   display: flex;
   gap: 1rem;
 }
+.upper>h3 {
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
 .numbers {
+  margin-top: 1rem;
   flex: 1;
+}
+.lower {
+  display: flex;
+  gap: 1rem;
+}
+.lowerLeft, .lowerRight {
+  flex: 1;
+  gap: 0.5rem;
+}
+.lower-left {
+  display: flex;
+  flex-direction: column;
 }
 
