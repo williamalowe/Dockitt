@@ -5,7 +5,7 @@ const LogoHeader = () => {
   return (
     <div className={styles.header}>
       <h3>
-        <NavLink>dockitt.</NavLink>
+        <NavLink>Dockitt.</NavLink>
       </h3>
       <div className={styles.links}>
         <NavLink to='/'>Home</NavLink>
