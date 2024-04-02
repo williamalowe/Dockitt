@@ -1,0 +1,52 @@
+.updates>h3 {
+  padding: 1rem 1rem 0rem 1rem;
+  font-size: 1.2;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--highlight);
+}
+.updates>h5 {
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+}
+.changes {
+  margin-top: 1rem;
+  border-bottom: 1px solid var(--accent);
+}
+.update {
+  border-top: 1px solid var(--accent);
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-size: 0.8rem;
+}
+.user {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.user>img {
+  height: 2rem;
+  background: #fff;
+  border-radius: 50%;
+  padding: 0.5rem;
+}
+.info {
+  flex: 1;
+  text-align: end;
+}
+.updateMsg {
+  composes: update;
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+  .lower {
+    display: none;
+  }
+  .user>img {
+    display: none;
+  }
+}

@@ -1,0 +1,21 @@
+.card {
+  border: 1px solid var(--accent);
+  padding: 0.5rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.card>h5 {
+  color: var(--highlight);
+}
+.card>h3 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+.card>h5:nth-child(3) {
+  font-style: italic;
+  color: #5e5e5e;
+  font-size: 0.8rem;
+}

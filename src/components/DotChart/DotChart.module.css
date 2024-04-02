@@ -1,0 +1,52 @@
+.chart {
+  display: flex;
+  align-items: end;
+  padding: 2rem;
+}
+.section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+}
+.header {
+  transform: rotate(-60deg) translate(0rem, -1.5rem);
+  height: 20px;
+}
+.dotContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+.dot {
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--highlight);
+  border-radius: 20%;
+  padding: 2px;
+  cursor: pointer;
+  transition: border-radius 0.3s ease-in-out;
+}
+.fill {
+  background: var(--highlight);
+  width: 100%;
+  height: 100%;
+  border-radius: 20%;
+  transition: border-radius 0.3s ease-in-out;
+}
+.dot:hover, .dot:hover>.fill {
+  border-radius: 50%;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    transform: rotate(-90deg);
+  }
+  .chart {
+    padding: 0;
+  }
+  .section {
+    width: 60px;
+  }
+}
