@@ -77,7 +77,7 @@ const Updates = () => {
           </div>
         </div>
         <div className={styles.updateMsg}>
-          This is not completed and is only displayed for demonstration purposes.
+          This update-component is not completed and is only displayed for demonstration purposes.
         </div>
       </div>
     </article>
