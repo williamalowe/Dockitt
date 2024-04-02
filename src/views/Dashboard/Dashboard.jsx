@@ -3,6 +3,7 @@ import { TaskContext } from '../Home/Home';
 import styles from './Dashboard.module.css';
 import StatCard from '../../components/StatCard/StatCard';
 import BarChart from '../../components/BarChart/BarChart';
+import DotChart from '../../components/DotChart/DotChart';
 
 const Dashboard = () => {
   const { tasks } = useContext(TaskContext);
@@ -48,7 +49,9 @@ const Dashboard = () => {
             />
           </div>
           <div className={styles.dotContainer}>
-
+            <DotChart 
+              tasks={activeTasks}
+            />
           </div>
         </div>
         <div className={styles.lowerRight}></div>
