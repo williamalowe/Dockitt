@@ -47,5 +47,17 @@
   border-radius: 12px;
 }
 
+@media screen and (max-width: 768px) {
+  .upperContent {
+    flex-wrap: wrap;
+  }
+  .lower {
+    flex-direction: column;
+  }
+  .dotContainer {
+    margin-bottom: 2rem;
+  }
+}
+
 
 

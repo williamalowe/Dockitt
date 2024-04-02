@@ -1,6 +1,3 @@
-.updates {
-
-}
 .updates>h3 {
   padding: 1rem 1rem 0rem 1rem;
   font-size: 1.2;
@@ -11,7 +8,6 @@
 .updates>h5 {
   padding: 0.5rem 1rem;
   font-size: 0.8rem;
-
 }
 .changes {
   margin-top: 1rem;
@@ -44,4 +40,13 @@
   composes: update;
   display: flex;
   justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+  .lower {
+    display: none;
+  }
+  .user>img {
+    display: none;
+  }
 }
