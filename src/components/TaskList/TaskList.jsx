@@ -15,6 +15,7 @@ const TaskList = () => {
   const filterCompletedElement = useRef();
   const filterCancelledElement = useRef();
   const mobDropdownElement = useRef();
+  const mobTaskFormElement = useRef();
 
   const [filter, setFilter] = useState(0)
   const [filteredList, setFilteredList] = useState([...tasks])
@@ -22,6 +23,7 @@ const TaskList = () => {
   useEffect(() => {
     drawerElement.current.style.left = "-20%";
     mobDropdownElement.current.style.display = "none";
+    mobTaskFormElement.current.style.display = "none";
   }, [])
   useEffect(() => {
     if (filter === 0) {
@@ -71,6 +73,13 @@ const TaskList = () => {
       mobDropdownElement.current.style.display = 'flex';
     } else {
       mobDropdownElement.current.style.display = 'none';
+    }
+  }
+  const toggleMobTaskForm = () => {
+    if (mobTaskFormElement.current.style.display === 'none') {
+      mobTaskFormElement.current.style.display = 'flex';
+    } else {
+      mobTaskFormElement.current.style.display = 'none';
     }
   }
 
@@ -189,6 +198,10 @@ const TaskList = () => {
             </div>
             tasks
           </h3>
+          <button className={styles.mobNewTaskButton} onClick={toggleMobTaskForm}>New Task</button>
+          <div className={styles.mobForm} ref={mobTaskFormElement}>
+            <NewTaskForm />
+          </div>
           <div className={styles.mobList}>
             {
               filteredList.map((task) => 
