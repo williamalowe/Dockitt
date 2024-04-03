@@ -14,12 +14,16 @@ const TaskList = () => {
   const filterUnderReviewElement = useRef();
   const filterCompletedElement = useRef();
   const filterCancelledElement = useRef();
+  const mobDropdownElement = useRef();
+  const mobTaskFormElement = useRef();
 
   const [filter, setFilter] = useState(0)
   const [filteredList, setFilteredList] = useState([...tasks])
 
   useEffect(() => {
-    drawerElement.current.style.left = "-20%"
+    drawerElement.current.style.left = "-20%";
+    mobDropdownElement.current.style.display = "none";
+    mobTaskFormElement.current.style.display = "none";
   }, [])
   useEffect(() => {
     if (filter === 0) {
@@ -64,16 +68,30 @@ const TaskList = () => {
     // apply filter color
     element.current.style.color = 'var(--highlight)';
   }
+  const toggleDropdown = () => {
+    if (mobDropdownElement.current.style.display === 'none') {
+      mobDropdownElement.current.style.display = 'flex';
+    } else {
+      mobDropdownElement.current.style.display = 'none';
+    }
+  }
+  const toggleMobTaskForm = () => {
+    if (mobTaskFormElement.current.style.display === 'none') {
+      mobTaskFormElement.current.style.display = 'flex';
+    } else {
+      mobTaskFormElement.current.style.display = 'none';
+    }
+  }
 
   return (
     <div className={styles.tasks}>
       <ul className={styles.filter}>
-        <li onClick={() => setFilter(0)} ref={filterAllElement}>All Tasks</li>
-        <li onClick={() => setFilter(1)} ref={filterBacklogElement}>Backlog</li>
-        <li onClick={() => setFilter(2)} ref={filterInProgressElement}>In Progress</li>
-        <li onClick={() => setFilter(3)} ref={filterUnderReviewElement}>Under Review</li>
-        <li onClick={() => setFilter(4)} ref={filterCompletedElement}>Completed</li>
-        <li onClick={() => setFilter(5)} ref={filterCancelledElement}>Cancelled</li>
+        <li onClick={() => setFilter(0)} ref={filterAllElement}>All Tasks ({tasks.length})</li>
+        <li onClick={() => setFilter(1)} ref={filterBacklogElement}>Backlog ({tasks.filter((task) => task.status === 'backlog').length})</li>
+        <li onClick={() => setFilter(2)} ref={filterInProgressElement}>In Progress ({tasks.filter((task) => task.status === 'in progress').length})</li>
+        <li onClick={() => setFilter(3)} ref={filterUnderReviewElement}>Under Review ({tasks.filter((task) => task.status === 'under review').length})</li>
+        <li onClick={() => setFilter(4)} ref={filterCompletedElement}>Completed ({tasks.filter((task) => task.status === 'completed').length})</li>
+        <li onClick={() => setFilter(5)} ref={filterCancelledElement}>Cancelled ({tasks.filter((task) => task.status === 'cancelled').length})</li>
         <li onClick={toggleDrawer}>New Task</li>
       </ul>
       <div className={styles.content}>
@@ -143,7 +161,47 @@ const TaskList = () => {
         </div>
         {/* mobile view */}
         <div className={styles.mobView}>
-          <h3>Tasks</h3>
+          <h3>
+            Showing 
+            <div className={styles.dropdown}>
+              <button onClick={toggleDropdown}>
+                {
+                  filter === 0 ? <>all</> :
+                  filter === 1 ? <>backlog</> :
+                  filter === 2 ? <>in progress</> :
+                  filter === 3 ? <>under review</> :
+                  filter === 4 ? <>completed</> :
+                  <>cancelled</> 
+                }
+                <img src="./tri-down.svg" alt="dropdown" className={styles.dropdownArrow}/>
+              </button>
+              <ul className={styles.dropdownMenu} ref={mobDropdownElement}>
+                <li className={styles.menuItem}>
+                  <button onClick={() => setFilter(0) + toggleDropdown()}>All Tasks</button>
+                </li>
+                <li className={styles.menuItem}>
+                  <button onClick={() => setFilter(1) + toggleDropdown()}>Backlog</button>
+                </li>
+                <li className={styles.menuItem}>
+                  <button onClick={() => setFilter(2) + toggleDropdown()}>In Progress</button>
+                </li>
+                <li className={styles.menuItem}>
+                  <button onClick={() => setFilter(3) + toggleDropdown()}>Under Review</button>
+                </li>
+                <li className={styles.menuItem}>
+                  <button onClick={() => setFilter(4) + toggleDropdown()}>Completed</button>
+                </li>
+                <li className={styles.menuItem}>
+                  <button onClick={() => setFilter(5) + toggleDropdown()}>Cancelled</button>
+                </li>
+              </ul>
+            </div>
+            tasks
+          </h3>
+          <button className={styles.mobNewTaskButton} onClick={toggleMobTaskForm}>New Task</button>
+          <div className={styles.mobForm} ref={mobTaskFormElement}>
+            <NewTaskForm />
+          </div>
           <div className={styles.mobList}>
             {
               filteredList.map((task) => 

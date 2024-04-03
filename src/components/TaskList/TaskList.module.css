@@ -158,7 +158,53 @@
   display: grid;
   gap: 0.5rem;
 }
-
+.dropdown {
+  display: inline-block;
+}
+.dropdownMenu {
+  flex-direction: column;
+  gap: 0.5rem;
+  position: absolute;
+  background: var(--accent);
+  transition: all 0.3s ease-in-out;
+  z-index: 100; 
+}
+.dropdown>button {
+  margin: 0.5rem;
+  text-transform: capitalize;
+  background: none;
+  color: var(--highlight);
+  border: none;
+  font-size: 1rem;
+  padding: 0;
+}
+.dropdownArrow {
+  height: 1rem;
+  filter: invert(68%) sepia(18%) saturate(6353%) hue-rotate(92deg) brightness(99%) contrast(73%);
+  margin-left: 0.5rem;
+}
+.dropdownMenu>li>button {
+  width: 100%;
+  border: none;
+  background: var(--accent);
+  color: var(--text);
+  text-align: left;
+  padding: 0.5rem;
+}
+.mobForm {
+  border: 1px solid var(--accent);
+  border-radius: 12px;
+  margin-top: 0.5rem;
+}
+.mobNewTaskButton {
+  font-weight: 600;
+  letter-spacing: 1px;
+  border: 2px solid var(--highlight);
+  background: transparent;
+  color: var(--highlight);
+  border-radius: 8px;
+  padding: 0.25rem;
+}
 @media screen and (max-width: 768px) {
   .filter {
     display: none;
