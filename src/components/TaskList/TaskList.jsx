@@ -68,12 +68,12 @@ const TaskList = () => {
   return (
     <div className={styles.tasks}>
       <ul className={styles.filter}>
-        <li onClick={() => setFilter(0)} ref={filterAllElement}>All Tasks</li>
-        <li onClick={() => setFilter(1)} ref={filterBacklogElement}>Backlog</li>
-        <li onClick={() => setFilter(2)} ref={filterInProgressElement}>In Progress</li>
-        <li onClick={() => setFilter(3)} ref={filterUnderReviewElement}>Under Review</li>
-        <li onClick={() => setFilter(4)} ref={filterCompletedElement}>Completed</li>
-        <li onClick={() => setFilter(5)} ref={filterCancelledElement}>Cancelled</li>
+        <li onClick={() => setFilter(0)} ref={filterAllElement}>All Tasks ({tasks.length})</li>
+        <li onClick={() => setFilter(1)} ref={filterBacklogElement}>Backlog ({tasks.filter((task) => task.status === 'backlog').length})</li>
+        <li onClick={() => setFilter(2)} ref={filterInProgressElement}>In Progress ({tasks.filter((task) => task.status === 'in progress').length})</li>
+        <li onClick={() => setFilter(3)} ref={filterUnderReviewElement}>Under Review ({tasks.filter((task) => task.status === 'under review').length})</li>
+        <li onClick={() => setFilter(4)} ref={filterCompletedElement}>Completed ({tasks.filter((task) => task.status === 'completed').length})</li>
+        <li onClick={() => setFilter(5)} ref={filterCancelledElement}>Cancelled ({tasks.filter((task) => task.status === 'cancelled').length})</li>
         <li onClick={toggleDrawer}>New Task</li>
       </ul>
       <div className={styles.content}>
