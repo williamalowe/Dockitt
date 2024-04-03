@@ -157,7 +157,12 @@ const TaskList = () => {
             <div className={styles.dropdown}>
               <button onClick={toggleDropdown}>
                 {
-                  filter === 0 ? <>all</> : filteredList[0].status
+                  filter === 0 ? <>all</> :
+                  filter === 1 ? <>backlog</> :
+                  filter === 2 ? <>in progress</> :
+                  filter === 3 ? <>under review</> :
+                  filter === 4 ? <>completed</> :
+                  <>cancelled</> 
                 }
                 <img src="./tri-down.svg" alt="dropdown" className={styles.dropdownArrow}/>
               </button>
