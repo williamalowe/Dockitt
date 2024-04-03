@@ -14,12 +14,14 @@ const TaskList = () => {
   const filterUnderReviewElement = useRef();
   const filterCompletedElement = useRef();
   const filterCancelledElement = useRef();
+  const mobDropdownElement = useRef();
 
   const [filter, setFilter] = useState(0)
   const [filteredList, setFilteredList] = useState([...tasks])
 
   useEffect(() => {
-    drawerElement.current.style.left = "-20%"
+    drawerElement.current.style.left = "-20%";
+    mobDropdownElement.current.style.display = "none";
   }, [])
   useEffect(() => {
     if (filter === 0) {
@@ -63,6 +65,13 @@ const TaskList = () => {
     filterCancelledElement.current.style.color = 'var(--text)';
     // apply filter color
     element.current.style.color = 'var(--highlight)';
+  }
+  const toggleDropdown = () => {
+    if (mobDropdownElement.current.style.display === 'none') {
+      mobDropdownElement.current.style.display = 'flex';
+    } else {
+      mobDropdownElement.current.style.display = 'none';
+    }
   }
 
   return (
@@ -143,7 +152,38 @@ const TaskList = () => {
         </div>
         {/* mobile view */}
         <div className={styles.mobView}>
-          <h3>Tasks</h3>
+          <h3>
+            Showing 
+            <div className={styles.dropdown}>
+              <button onClick={toggleDropdown}>
+                {
+                  filter === 0 ? <>all</> : filteredList[0].status
+                }
+                <img src="./tri-down.svg" alt="dropdown" className={styles.dropdownArrow}/>
+              </button>
+              <ul className={styles.dropdownMenu} ref={mobDropdownElement}>
+                <li className={styles.menuItem}>
+                  <button onClick={() => setFilter(0) + toggleDropdown()}>All Tasks</button>
+                </li>
+                <li className={styles.menuItem}>
+                  <button onClick={() => setFilter(1) + toggleDropdown()}>Backlog</button>
+                </li>
+                <li className={styles.menuItem}>
+                  <button onClick={() => setFilter(2) + toggleDropdown()}>In Progress</button>
+                </li>
+                <li className={styles.menuItem}>
+                  <button onClick={() => setFilter(3) + toggleDropdown()}>Under Review</button>
+                </li>
+                <li className={styles.menuItem}>
+                  <button onClick={() => setFilter(4) + toggleDropdown()}>Completed</button>
+                </li>
+                <li className={styles.menuItem}>
+                  <button onClick={() => setFilter(5) + toggleDropdown()}>Cancelled</button>
+                </li>
+              </ul>
+            </div>
+            tasks
+          </h3>
           <div className={styles.mobList}>
             {
               filteredList.map((task) => 

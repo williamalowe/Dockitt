@@ -158,7 +158,40 @@
   display: grid;
   gap: 0.5rem;
 }
-
+.dropdown {
+  display: inline-block;
+}
+.dropdownMenu {
+  flex-direction: column;
+  gap: 0.5rem;
+  position: absolute;
+  background: var(--accent);
+  transition: all 0.3s ease-in-out;
+  z-index: 100;
+  
+}
+.dropdown>button {
+  margin: 0.5rem;
+  text-transform: capitalize;
+  background: none;
+  color: var(--highlight);
+  border: none;
+  font-size: 1rem;
+  padding: 0;
+}
+.dropdownArrow {
+  height: 1rem;
+  filter: invert(68%) sepia(18%) saturate(6353%) hue-rotate(92deg) brightness(99%) contrast(73%);
+  margin-left: 0.5rem;
+}
+.dropdownMenu>li>button {
+  width: 100%;
+  border: none;
+  background: var(--accent);
+  color: var(--text);
+  text-align: left;
+  padding: 0.5rem;
+}
 @media screen and (max-width: 768px) {
   .filter {
     display: none;
