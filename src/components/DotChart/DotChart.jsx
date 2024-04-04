@@ -37,7 +37,7 @@ const DotChart = ({ tasks }) => {
         {/* dots here */}
         <div className={styles.dotContainer}>
          {
-          inProgressTasks.map((tasks, index) => 
+          underReviewTasks.map((tasks, index) => 
             <div className={styles.dot} key={index}>
               <div className={styles.fill}></div>
             </div>
