@@ -45,7 +45,7 @@
     "date": "1712198176778",
     "description": "Implement Dashboard-View",
     "tag": "feat",
-    "status": "under review",
+    "status": "completed",
     "priority": "medium"
   },
   {
@@ -80,7 +80,7 @@
     "date": "1712198597705",
     "description": "Fix active filter styling",
     "tag": "bug",
-    "status": "under review",
+    "status": "completed",
     "priority": "medium"
   },
   {
@@ -115,7 +115,7 @@
     "date": "1712199213273",
     "description": "Dashboard dotchart currently display incorrecct number of tasks",
     "tag": "fix",
-    "status": "in progress",
+    "status": "under review",
     "priority": "medium"
   },
   {
