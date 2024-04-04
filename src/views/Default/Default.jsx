@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import styles from './Default.module.css';
 
 const Default = () => {
@@ -22,6 +23,9 @@ const Default = () => {
           libraries, from scatch using React, Vite, CSS Modules, and
           local storage.
         </p>
+        <div className={styles.button}>
+          <NavLink to='/tasks'>Get Started</NavLink>
+        </div>
         <div className={styles.links}>
           <a href="https://github.com/williamalowe/Dockitt">
             <img src="./github.svg" alt="github link icon" />

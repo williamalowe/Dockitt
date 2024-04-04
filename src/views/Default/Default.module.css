@@ -65,7 +65,26 @@
 .links>a:hover>img {
   transform: scale(1.4);
 }
-
+.button {
+  background: var(--highlight);
+  padding: 1rem;
+  border: 2px solid var(--highlight);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background  0.3s ease-in-out;
+}
+.button>a {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--background);
+  color: background  0.3s ease-in-out;
+}
+.button:hover {
+  background: var(--background);
+}
+.button:hover>a {
+  color: var(--highlight);
+}
 @media screen and (max-width: 768px) {
   .main {
     flex-direction: column;
