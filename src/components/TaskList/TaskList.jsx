@@ -1,5 +1,6 @@
 import { useState, useEffect, useContext, useRef } from 'react'
 import { TaskContext } from '../../views/Home/Home';
+import testData from './testdata.json';
 import styles from './TaskList.module.css'
 import NewTaskForm from '../NewTaskForm/NewTaskForm';
 import MobCard from '../MobCard/MobCard';
@@ -82,6 +83,9 @@ const TaskList = () => {
       mobTaskFormElement.current.style.display = 'none';
     }
   }
+  const loadTestData = () => {
+    console.log(testData);
+  }
 
   return (
     <div className={styles.tasks}>
@@ -120,6 +124,7 @@ const TaskList = () => {
                   <td>
                     <div>No pending tasks!</div>
                     <button className={styles.addButton} onClick={toggleDrawer}>Add Task</button>
+                    <button className={styles.loadTestDataButton} onClick={() => loadTestData()}>Load Example Data</button>
                   </td>
                 </tr>
                 :
