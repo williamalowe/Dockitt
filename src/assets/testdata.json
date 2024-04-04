@@ -1,0 +1,135 @@
+[
+  {
+    "date": "1711937802797",
+    "description": "Add Animations For Adding New Task",
+    "tag": "styles",
+    "status": "backlog",
+    "priority": "low"
+  },
+  {
+    "date": "1711937873697",
+    "description": "Add Animations For Task Item Status Change",
+    "tag": "styles",
+    "status": "backlog",
+    "priority": "low"
+  },
+  {
+    "date": "1712198007873",
+    "description": "Add Dark/Light Mode Toggle",
+    "tag": "styles",
+    "status": "backlog",
+    "priority": "medium"
+  },
+  {
+    "date": "1712198075887",
+    "description": "Add mobile responsiveness",
+    "tag": "feat",
+    "status": "under review",
+    "priority": "urgent"
+  },
+  {
+    "date": "1712198158895",
+    "description": "Implement Home-View",
+    "tag": "feat",
+    "status": "completed",
+    "priority": "high"
+  },
+  {
+    "date": "1712199017638",
+    "description": "Implement Tasks-View",
+    "tag": "feat",
+    "status": "completed",
+    "priority": "high"
+  },
+  {
+    "date": "1712198176778",
+    "description": "Implement Dashboard-View",
+    "tag": "feat",
+    "status": "under review",
+    "priority": "medium"
+  },
+  {
+    "date": "1712198387998",
+    "description": "Add test data",
+    "tag": "func",
+    "status": "under review",
+    "priority": "medium"
+  },
+  {
+    "date": "1712198453622",
+    "description": "Implement add task functionality",
+    "tag": "feat",
+    "status": "completed",
+    "priority": "urgent"
+  },
+  {
+    "date": "1712198500530",
+    "description": "Implement task list persistence - local storage or db",
+    "tag": "func",
+    "status": "completed",
+    "priority": "high"
+  },
+  {
+    "date": "1712198554078",
+    "description": "Update changelogs",
+    "tag": "docs",
+    "status": "in progress",
+    "priority": "medium"
+  },
+  {
+    "date": "1712198597705",
+    "description": "Fix active filter styling",
+    "tag": "bug",
+    "status": "under review",
+    "priority": "medium"
+  },
+  {
+    "date": "1712198816852",
+    "description": "Toggle newtaskform button only activates after initial double-click",
+    "tag": "bug",
+    "status": "completed",
+    "priority": "low"
+  },
+  {
+    "date": "1712198778886",
+    "description": "Add task status update button descriptions",
+    "tag": "styles",
+    "status": "completed",
+    "priority": "low"
+  },
+  {
+    "date": "1712198888150",
+    "description": "Implement Dashboard changelog form",
+    "tag": "feat",
+    "status": "cancelled",
+    "priority": "low"
+  },
+  {
+    "date": "1712199109811",
+    "description": "Implement removal of tasks on cancel if status is already 'cancelled'",
+    "tag": "func",
+    "status": "completed",
+    "priority": "low"
+  },
+  {
+    "date": "1712199213273",
+    "description": "Dashboard dotchart currently display incorrecct number of tasks",
+    "tag": "fix",
+    "status": "in progress",
+    "priority": "medium"
+  },
+  {
+    "date": "1712199294173",
+    "description": "Dashboard barchart progress bar changes width if text clips",
+    "tag": "fix",
+    "status": "in progress",
+    "priority": "medium"
+  },
+  {
+    "date": "1712199440795",
+    "description": "Add Remove All Completed/Cancelled Task Button",
+    "tag": "feat",
+    "status": "backlog",
+    "priority": "medium"
+  }
+]

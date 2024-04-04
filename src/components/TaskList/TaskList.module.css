@@ -205,6 +205,10 @@
   border-radius: 8px;
   padding: 0.25rem;
 }
+.loadTestDataButton {
+  composes: addButton;
+  margin-left: 1rem;
+}
 @media screen and (max-width: 768px) {
   .filter {
     display: none;

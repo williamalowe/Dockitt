@@ -1,14 +1,16 @@
 import { Outlet } from 'react-router-dom';
+import { createContext, useState, useEffect } from 'react';
 import LogoHeader from '../../components/LogoHeader/LogoHeader';
 import styles from './Home.module.css';
-import { createContext, useState, useEffect } from 'react';
+import testData from '../../assets/testdata.json';
 
 export const TaskContext = createContext({
   tasks: [],
   addTask: () => {},
   updateStatus: () => {},
   rollbackStatus: () => {},
-  cancelTask: () => {}
+  cancelTask: () => {},
+  loadTestData: () => {}
 });
 
 const Home = () => {
@@ -16,6 +18,7 @@ const Home = () => {
     return JSON.parse(localStorage.getItem('tasks')) || []
   });
 
+  // const [tasks, setTasks] = useState([])
   useEffect(() => {
     localStorage.setItem('tasks', JSON.stringify(tasks));
   }, [tasks]);
@@ -111,8 +114,13 @@ const Home = () => {
     }
   }
 
+  const loadTestData = () => {
+    setTasks([...testData]);
+  }
+
+
   return (
-    <TaskContext.Provider value={{ tasks, addTask, updateStatus, rollbackStatus, cancelTask }}>
+    <TaskContext.Provider value={{ tasks, addTask, updateStatus, rollbackStatus, cancelTask, loadTestData }}>
       <main className={styles.main}>
         <LogoHeader />
       <section className={styles.content}>
