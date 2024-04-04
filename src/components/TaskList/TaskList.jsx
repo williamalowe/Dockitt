@@ -1,12 +1,11 @@
 import { useState, useEffect, useContext, useRef } from 'react'
 import { TaskContext } from '../../views/Home/Home';
-import testData from './testdata.json';
 import styles from './TaskList.module.css'
 import NewTaskForm from '../NewTaskForm/NewTaskForm';
 import MobCard from '../MobCard/MobCard';
 
 const TaskList = () => {
-  const { tasks, updateStatus, rollbackStatus, cancelTask } = useContext(TaskContext);
+  const { tasks, loadTestData, updateStatus, rollbackStatus, cancelTask } = useContext(TaskContext);
   const drawerElement = useRef();
   const tableElement = useRef();
   const filterAllElement = useRef();
@@ -82,9 +81,6 @@ const TaskList = () => {
     } else {
       mobTaskFormElement.current.style.display = 'none';
     }
-  }
-  const loadTestData = () => {
-    console.log(testData);
   }
 
   return (
