@@ -136,7 +136,7 @@
 .buttons > button:nth-child(1):hover > .updateDescription {
   opacity: 1;
   left: 0;
-  color: var(--highlight);
+  color: #22c55e;
 }
 .buttons > button:nth-child(2):hover > .updateDescription {
   opacity: 1;
