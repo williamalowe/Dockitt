@@ -3,7 +3,8 @@
 :root {
   --background: #000;
   --text: #fafafa;
-  --highlight: #22c55e;
+  /* --highlight: #22c55e; */
+  --highlight: #FF5F00;
   --accent: #292524;
 }
 
