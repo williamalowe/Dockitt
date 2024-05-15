@@ -4,7 +4,8 @@
   gap: 2rem;
   height: 100%;
 }
-.left, .right {
+.left,
+.right {
   flex: 1;
 }
 .left {
@@ -14,7 +15,7 @@
   justify-content: center;
   gap: 1rem;
 }
-.logo>h5 {
+.logo > h5 {
   top: 10%;
   left: 10%;
   position: relative;
@@ -26,7 +27,7 @@
   background: var(--background);
   z-index: 100;
 }
-.logo>h3 {
+.logo > h3 {
   font-size: 4.8rem;
   font-weight: 800;
   padding: 0.5rem;
@@ -34,7 +35,7 @@
   border-radius: 12px;
   color: var(--background);
 }
-.left>p {
+.left > p {
   width: 50%;
   font-size: 1.2rem;
   text-align: center;
@@ -50,19 +51,20 @@
   justify-content: center;
   gap: 1rem;
 }
-.right>p {
+.right > p {
   font-size: 1.2rem;
 }
 .links {
   display: flex;
   gap: 2rem;
 }
-.links>a>img {
-  filter: invert(68%) sepia(18%) saturate(6353%) hue-rotate(92deg) brightness(99%) contrast(73%);
+.links > a > img {
+  filter: invert(68%) sepia(18%) saturate(6353%) hue-rotate(92deg)
+    brightness(99%) contrast(73%);
   height: 3.6rem;
   transition: transform 0.3s ease-in-out;
 }
-.links>a:hover>img {
+.links > a:hover > img {
   transform: scale(1.4);
 }
 .button {
@@ -71,37 +73,37 @@
   border: 2px solid var(--highlight);
   border-radius: 12px;
   cursor: pointer;
-  transition: background  0.3s ease-in-out;
+  transition: background 0.3s ease-in-out;
 }
-.button>a {
+.button > a {
   text-decoration: none;
   font-weight: 600;
   color: var(--background);
-  color: background  0.3s ease-in-out;
+  color: background 0.3s ease-in-out;
 }
 .button:hover {
   background: var(--background);
 }
-.button:hover>a {
+.button:hover > a {
   color: var(--highlight);
 }
 @media screen and (max-width: 768px) {
   .main {
     flex-direction: column;
   }
-  .logo>h5 {
+  .logo > h5 {
     font-size: 1.2rem;
   }
-  .logo>h3 {
+  .logo > h3 {
     font-size: 3.2rem;
   }
-  .left>p {
+  .left > p {
     font-size: 1rem;
   }
-  .right>p {
+  .right > p {
     font-size: 1rem;
   }
-  .links>a>img {
+  .links > a > img {
     height: 2rem;
   }
 }

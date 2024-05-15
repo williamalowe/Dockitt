@@ -15,23 +15,23 @@
   place-content: center;
   gap: 1rem;
 }
-.content>h3 {
+.content > h3 {
   font-size: 2.4rem;
 }
-.content>h5 {
+.content > h5 {
   text-align: center;
   font-size: 1.2rem;
 }
-.content>h5>a {
+.content > h5 > a {
   text-decoration: none;
   color: var(--highlight);
 }
-.content>h5>a:hover {
+.content > h5 > a:hover {
   text-transform: uppercase;
 }
 
 @media screen and (max-width: 768px) {
-  .content>h3 {
+  .content > h3 {
     font-size: 1.8rem;
     text-align: center;
   }

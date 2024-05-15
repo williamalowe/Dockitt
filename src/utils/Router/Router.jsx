@@ -8,17 +8,17 @@ import Dashboard from "../../views/Dashboard/Dashboard";
 const Router = () => {
   const router = createBrowserRouter([
     {
-      path: '/',
+      path: "/",
       element: <Home />,
       children: [
         { index: true, element: <Default /> },
-        { path: '/tasks', element: <Tasks /> },
-        { path: '/dashboard', element: <Dashboard /> }
+        { path: "/tasks", element: <Tasks /> },
+        { path: "/dashboard", element: <Dashboard /> },
       ],
-      errorElement: <Error />
-    }
-  ])
-  return <RouterProvider router={router} />
-}
+      errorElement: <Error />,
+    },
+  ]);
+  return <RouterProvider router={router} />;
+};
 
-export default Router
+export default Router;

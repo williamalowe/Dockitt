@@ -7,7 +7,7 @@
   display: flex;
   gap: 0.5rem;
 }
-.section>h5 {
+.section > h5 {
   width: 160px;
 }
 .progress {

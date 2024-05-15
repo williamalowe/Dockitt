@@ -1,7 +1,6 @@
-import { NavLink } from 'react-router-dom';
-import LogoHeader from '../../components/LogoHeader/LogoHeader';
-import styles from './Error.module.css';
-
+import { NavLink } from "react-router-dom";
+import LogoHeader from "../../components/LogoHeader/LogoHeader";
+import styles from "./Error.module.css";
 
 const Error = () => {
   return (
@@ -11,12 +10,12 @@ const Error = () => {
         <h3>Oops! Something has gone wrong.</h3>
         <h5>
           Click
-          <NavLink to='/tasks'> here </NavLink>
+          <NavLink to="/tasks"> here </NavLink>
           to return to your tasks.
         </h5>
       </section>
     </main>
-  )
-}
+  );
+};
 
-export default Error
+export default Error;

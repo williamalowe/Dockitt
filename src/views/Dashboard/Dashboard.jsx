@@ -1,14 +1,14 @@
-import { useContext } from 'react';
-import { TaskContext } from '../Home/Home';
-import styles from './Dashboard.module.css';
-import StatCard from '../../components/StatCard/StatCard';
-import BarChart from '../../components/BarChart/BarChart';
-import DotChart from '../../components/DotChart/DotChart';
-import Updates from '../../components/Updates/Updates';
+import { useContext } from "react";
+import { TaskContext } from "../Home/Home";
+import styles from "./Dashboard.module.css";
+import StatCard from "../../components/StatCard/StatCard";
+import BarChart from "../../components/BarChart/BarChart";
+import DotChart from "../../components/DotChart/DotChart";
+import Updates from "../../components/Updates/Updates";
 
 const Dashboard = () => {
   const { tasks } = useContext(TaskContext);
-  const activeTasks = tasks.filter((task) => task.status !== 'cancelled')
+  const activeTasks = tasks.filter((task) => task.status !== "cancelled");
 
   return (
     <section className={styles.dashboard}>
@@ -16,43 +16,52 @@ const Dashboard = () => {
         <h3>Dashboard</h3>
         <div className={styles.upperContent}>
           <div className={styles.numbers}>
-            <StatCard 
+            <StatCard
               title="Backlog"
-              number={activeTasks.filter((task) => task.status === 'backlog').length}
+              number={
+                activeTasks.filter((task) => task.status === "backlog").length
+              }
               total={activeTasks.length}
             />
           </div>
           <div className={styles.numbers}>
-            <StatCard 
+            <StatCard
               title="In Progress"
-              number={activeTasks.filter((task) => task.status === 'in progress').length}
+              number={
+                activeTasks.filter((task) => task.status === "in progress")
+                  .length
+              }
               total={activeTasks.length}
-            /></div>
+            />
+          </div>
           <div className={styles.numbers}>
-            <StatCard 
+            <StatCard
               title="Under Review"
-              number={activeTasks.filter((task) => task.status === 'under review').length}
+              number={
+                activeTasks.filter((task) => task.status === "under review")
+                  .length
+              }
               total={activeTasks.length}
-            /></div>
+            />
+          </div>
           <div className={styles.numbers}>
-            <StatCard 
+            <StatCard
               title="Completed"
-              number={activeTasks.filter((task) => task.status === 'completed').length}
+              number={
+                activeTasks.filter((task) => task.status === "completed").length
+              }
               total={activeTasks.length}
-            /></div>
+            />
+          </div>
         </div>
       </div>
       <div className={styles.lower}>
         <div className={styles.lowerLeft}>
           <div className={styles.graphContainer}>
-            <BarChart 
-              tasks={activeTasks}
-            />
+            <BarChart tasks={activeTasks} />
           </div>
           <div className={styles.dotContainer}>
-            <DotChart 
-              tasks={activeTasks}
-            />
+            <DotChart tasks={activeTasks} />
           </div>
         </div>
         <div className={styles.lowerRight}>
@@ -62,7 +71,7 @@ const Dashboard = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Dashboard
+export default Dashboard;

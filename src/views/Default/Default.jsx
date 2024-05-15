@@ -1,5 +1,5 @@
-import { NavLink } from 'react-router-dom';
-import styles from './Default.module.css';
+import { NavLink } from "react-router-dom";
+import styles from "./Default.module.css";
 
 const Default = () => {
   return (
@@ -10,21 +10,21 @@ const Default = () => {
           <h3>Dockitt</h3>
         </div>
         <p>
-          A productivity & project management service application by <span className={styles.highlight}>William Lowe</span>.
+          A productivity & project management service application by{" "}
+          <span className={styles.highlight}>William Lowe</span>.
         </p>
       </div>
       <div className={styles.right}>
         <p>
-          Dockitt is an application developed by William Lowe,
-          as a showcase of React fundamentals. It is an extended to-do 
-          list application, supporting multi-stage tasks, responsive design,
-          and a simple task overview dashboard. <br></br>
-          The application was built without the use of external UI
-          libraries, from scatch using React, Vite, CSS Modules, and
-          local storage.
+          Dockitt is an application developed by William Lowe, as a showcase of
+          React fundamentals. It is an extended to-do list application,
+          supporting multi-stage tasks, responsive design, and a simple task
+          overview dashboard. <br></br>
+          The application was built without the use of external UI libraries,
+          from scatch using React, Vite, CSS Modules, and local storage.
         </p>
         <div className={styles.button}>
-          <NavLink to='/tasks'>Get Started</NavLink>
+          <NavLink to="/tasks">Get Started</NavLink>
         </div>
         <div className={styles.links}>
           <a href="https://github.com/williamalowe/Dockitt">
@@ -36,7 +36,7 @@ const Default = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Default
+export default Default;

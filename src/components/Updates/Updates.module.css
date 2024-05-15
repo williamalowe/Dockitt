@@ -1,11 +1,11 @@
-.updates>h3 {
+.updates > h3 {
   padding: 1rem 1rem 0rem 1rem;
   font-size: 1.2;
   font-weight: 600;
   letter-spacing: 1px;
   color: var(--highlight);
 }
-.updates>h5 {
+.updates > h5 {
   padding: 0.5rem 1rem;
   font-size: 0.8rem;
 }
@@ -26,7 +26,7 @@
   gap: 1rem;
   align-items: center;
 }
-.user>img {
+.user > img {
   height: 2rem;
   background: #fff;
   border-radius: 50%;
@@ -46,7 +46,7 @@
   .lower {
     display: none;
   }
-  .user>img {
+  .user > img {
     display: none;
   }
 }

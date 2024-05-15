@@ -1,5 +1,5 @@
-import { NavLink } from 'react-router-dom';
-import styles from './LogoHeader.module.css';
+import { NavLink } from "react-router-dom";
+import styles from "./LogoHeader.module.css";
 
 const LogoHeader = () => {
   return (
@@ -8,12 +8,12 @@ const LogoHeader = () => {
         <NavLink>Dockitt.</NavLink>
       </h3>
       <div className={styles.links}>
-        <NavLink to='/'>Home</NavLink>
-        <NavLink to='/tasks'>Tasks</NavLink>
-        <NavLink to='/dashboard'>Dashboard</NavLink>
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/tasks">Tasks</NavLink>
+        <NavLink to="/dashboard">Dashboard</NavLink>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default LogoHeader
+export default LogoHeader;

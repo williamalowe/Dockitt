@@ -4,24 +4,26 @@
   gap: 0.5rem;
   height: 100%;
 }
-.form>h3 {
+.form > h3 {
   font-weight: 600;
   color: var(--highlight);
 }
-.form>label {
+.form > label {
   color: var(--highlight);
 }
 .wrapper {
   margin-top: 0.5rem;
   display: flex;
 }
-.left, .right {
+.left,
+.right {
   flex: 1;
 }
-.left>label, .right>label {
+.left > label,
+.right > label {
   color: var(--highlight);
 }
-.radio>input {
+.radio > input {
   accent-color: var(--highlight);
 }
 .descInput {
@@ -62,7 +64,7 @@
   justify-content: space-between;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
   .wrapper {
     flex-direction: column;
   }
