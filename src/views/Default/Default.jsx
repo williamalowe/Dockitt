@@ -27,10 +27,10 @@ const Default = () => {
           <NavLink to="/tasks">Get Started</NavLink>
         </div>
         <div className={styles.links}>
-          <a href="https://github.com/williamalowe/Dockitt">
+          <a target='_blank' href="https://github.com/williamalowe/Dockitt">
             <img src="./github.svg" alt="github link icon" />
           </a>
-          <a href="https://github.com/williamalowe/Dockitt">
+          <a target='_blank' href="https://github.com/williamalowe/Dockitt">
             <img src="./linkedin.svg" alt="linkedin link icon" />
           </a>
         </div>
