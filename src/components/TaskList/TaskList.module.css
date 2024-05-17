@@ -190,7 +190,7 @@
 }
 .dropdownArrow {
   height: 1rem;
-  filter: invert(37%) sepia(76%) saturate(1568%) hue-rotate(0deg) brightness(101%) contrast(107%);
+  filter: invert(10%) sepia(57%) saturate(4292%) hue-rotate(246deg) brightness(88%) contrast(103%);
   margin-left: 0.5rem;
 }
 .dropdownMenu > li > button {
