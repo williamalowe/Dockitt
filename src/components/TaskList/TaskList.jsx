@@ -257,7 +257,7 @@ const TaskList = () => {
             New Task
           </button>
           <div className={styles.mobForm} ref={mobTaskFormElement}>
-            <NewTaskForm />
+            <NewTaskForm handleClose={toggleMobTaskForm}/>
           </div>
           <div className={styles.mobList}>
             {filteredList.map((task) => (
