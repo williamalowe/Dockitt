@@ -69,7 +69,6 @@ const NewTaskForm = ({ handleClose }) => {
         placeholder="Task Description..."
         required
       />
-      <br></br>
       <label>Tag (optional):</label>
       <input
         className={styles.tagInput}

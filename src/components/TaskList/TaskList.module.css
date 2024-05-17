@@ -1,5 +1,6 @@
 .tasks {
-  overflow: hidden;
+  /* overflow: hidden; */
+  width: 100%;
 }
 .taskslist {
   flex: 1;
@@ -50,6 +51,7 @@
   transition: all 0.3s ease;
 }
 .content {
+  width: 100%;
   margin-top: 1rem;
   display: flex;
 }
@@ -159,6 +161,7 @@
 }
 .mobView {
   display: none;
+  width: 90%;
 }
 .mobList {
   margin-top: 1rem;
@@ -198,7 +201,11 @@
   text-align: left;
   padding: 0.5rem;
 }
+.mobView {
+  width: 90%;
+}
 .mobForm {
+  width: 100%;
   border: 1px solid var(--accent);
   border-radius: 12px;
   margin-top: 0.5rem;
@@ -227,6 +234,9 @@
     display: none;
   }
   .mobView {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
   }
 }

@@ -68,4 +68,14 @@
   .wrapper {
     flex-direction: column;
   }
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+  .tagInput {
+    width: 80%;
+  }
+  .descInput {
+    width: 80%;
+  }
 }
